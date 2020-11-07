@@ -1,0 +1,40 @@
+.feature_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 282px;
+  width: 282px;
+  -webkit-box-pack: start;
+  outline: 6px round red;
+  padding: 20px;
+  animation: huerotate 5s linear infinite;
+  background:white;
+  box-shadow: 0.4px 0.6px 10px rgba(0,255,0, .7);
+  transition: all .3s;
+  margin: 2rem;
+}
+.cardicon img {
+  color: black;
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+@keyframes huerotate{
+    from{
+        filter: hue-rotate(0);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+.cardheading{
+color: blue;
+}
+.cardcontent{
+    text-align: justify;
+    
+}
+.feature_card:hover{
+    transform: scale(1.06);
+}

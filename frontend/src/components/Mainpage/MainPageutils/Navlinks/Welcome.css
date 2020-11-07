@@ -1,0 +1,22 @@
+.welc-head{
+    font-size: 2rem;
+}
+.welc-head span{
+    color: #F2AA4CFF;
+}
+#contained-modal-title-vcenter span{
+    color: #F2AA4CFF;
+}
+.welc-btn{
+    background-color: transparent;
+    color: black ;
+    border-radius: 100px;
+    font-size: 1.03rem;
+    font-weight: 500;
+}
+.welc-btn:hover{
+    background-color: #F2AA4CFF;
+}
+.welc-btn:active{
+    background-color:#F2AA4CFF!important;
+}

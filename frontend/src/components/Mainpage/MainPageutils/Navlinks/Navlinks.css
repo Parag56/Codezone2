@@ -1,0 +1,71 @@
+.codezone-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.7s;
+    padding: 37px 33px;
+    z-index: 2;
+  }
+ 
+  
+  .codezone-header.sticky {
+    padding: 7px 66px;
+    background: white;
+  filter: drop-shadow(0 0 5px grey);
+  z-index: 2;
+  }
+  
+  .codezone-header .logo {
+    position: relative;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.7s;
+    z-index: 2;
+  }
+  
+  .codezone-header .codezone-nav ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+  }
+  
+  .codezone-header .codezone-nav ul li {
+    position: relative;
+    list-style: none;
+    z-index: 2;
+    padding: 1rem;
+  }
+  
+  .codezone-header .codezone-nav ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 700px;
+    transition: 0.7s;
+    z-index: 2;
+  }
+  
+  .codezone-header .codezone-nav ul li a:hover {
+    color: #999;
+    z-index: 2;
+  }
+  
+  .codezone-header.sticky .logo,
+  .codezone-header.sticky ul li a {
+    color: black;
+    z-index: 2;
+  }

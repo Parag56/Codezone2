@@ -1,0 +1,20 @@
+.codeandvideo{
+    display: flex;
+}
+.codearea{
+   flex:.65;
+   display: block;
+   /* border: 2px solid grey; */
+}
+.videoarea{
+    flex: .40;
+}
+.codeareastyles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 86vh;
+}
+
+
+

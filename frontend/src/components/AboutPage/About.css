@@ -1,0 +1,14 @@
+
+.head{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgb(214, 95, 95);
+    font-size: 65px;
+    
+}
+.card__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

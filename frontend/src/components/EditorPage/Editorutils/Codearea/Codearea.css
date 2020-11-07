@@ -1,0 +1,35 @@
+
+.topheader{
+    padding: 20px;
+    border-bottom: 2px solid black;
+    background-color: #002244;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.outsidedesign{
+    
+    box-shadow: 2px 3px 12px rgba(0,0,0,.5);
+}
+.themetog button{
+    padding: .5rem;
+    border-radius: 100px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+}
+.themetog .runbtn{
+    padding: .5rem 2.3rem;
+    margin-left: 1rem;
+}
+.themetog button:hover{
+    cursor: pointer;
+}
+.themetog button::selection{
+    border: none;
+}
+button:focus{
+    outline: 0 !important;
+}

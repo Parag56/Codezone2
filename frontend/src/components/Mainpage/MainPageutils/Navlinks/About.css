@@ -1,0 +1,8 @@
+.developer-cards{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.myabout{
+    font-size: 2rem;
+}
