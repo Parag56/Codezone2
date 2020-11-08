@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState,useContext} from "react";
+import {Link} from "react-router-dom";
 import "./Navlinks.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyVerticallyCenteredModal1 from "./Welcomemodal";
 import MyVerticallyCenteredModal2 from './Aboutmodal' 
+import MyVerticallyCenteredModal4 from '../../../Login/LoginModal'
+import {AuthContext} from '../../../Context/Auth-context'
 function NavLinks() {
-  const [modalShow1, setModalShow1] = React.useState(false);
-  const [modalShow2, setModalShow2] = React.useState(false);
+  const [modalShow1, setModalShow1] = useState(false);
+  const [modalShow2, setModalShow2] = useState(false);
+  const [modalShow4, setModalShow4] = useState(false);
+  const auth=useContext(AuthContext)
   return (
     <ul>
       <li>
@@ -28,9 +32,23 @@ function NavLinks() {
           onHide={() => setModalShow2(false)}
         />
       </li>
-      <li>
-        <Link to="/login">Signup/Login</Link>
+      {!auth.isloggedin && (
+        <li>
+        <Link to="#" onClick={()=>setModalShow4(true)}>Signup/Login</Link>
+        <MyVerticallyCenteredModal4
+          show={modalShow4}
+          onHide={() => setModalShow4(false)}
+          />
       </li>
+      )}
+      {
+        auth.isloggedin &&(
+          <li>
+            <Link to="#" onClick={auth.logout}>Logout</Link>
+          </li>
+        )
+      }
+      
     </ul>
   );
 }

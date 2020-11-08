@@ -15,7 +15,7 @@ function Maincontent() {
   return (
     <div className="main-bodycontent">
       <div className="vidback">
-        <video src={backvid} className="vid-bg" autoplay="true" loop muted />
+        <video src={backvid} className="vid-bg" autoPlay={true} showcontrolls="false" loop muted />
         <div className="banner-text">
           <h2>
             Code<span>zone</span>
