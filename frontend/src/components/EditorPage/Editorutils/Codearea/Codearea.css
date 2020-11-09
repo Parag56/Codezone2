@@ -14,14 +14,13 @@
     box-shadow: 2px 3px 12px rgba(0,0,0,.5);
 }
 .themetog button{
-    padding: .5rem;
-    border-radius: 100px;
+    padding: .3rem 1.2rem;
     background: none;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white;
 }
 .themetog .runbtn{
-    padding: .5rem 2.3rem;
+    padding: .3rem 1.7rem;
     margin-left: 1rem;
 }
 .themetog button:hover{
@@ -32,4 +31,19 @@
 }
 button:focus{
     outline: 0 !important;
+}
+#lang{
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    margin-left: 1rem;
+    padding: .3rem 1.7rem;
+}
+
+#lang option{
+    color: darkblue;
+}
+#lang option:hover{
+    color: white!important;
+    background-color: darkblue!important;
 }

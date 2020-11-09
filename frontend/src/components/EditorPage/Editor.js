@@ -6,9 +6,9 @@ import socketioclient from 'socket.io-client'
 let socket;
 const ENDPOINT = "http://localhost:5000/";
 function Editor() {
-    
         socket=socketioclient(ENDPOINT)
- 
+
+       
     return (
         <div>
            <Editortop socket={socket}/>
@@ -16,7 +16,6 @@ function Editor() {
               <div className="codearea">
                   <div className="codeareastyles">
                   <Codearea socket={socket}/>
-                       
                   </div>
               </div>
              

@@ -2,23 +2,25 @@ const express = require("express");
 const userRoute = require("./routers/user");
 const codeRoute = require("./routers/code");
 const mongoose = require("mongoose");
-const cors = require("cors");
 const HttpError = require("./models/Http-error");
-// const { ExpressPeerServer } = require('peer')
+
 
 const bodyparser = require("body-parser");
 const app = express();
-app.use(cors());
+
 const server = require("http").createServer(app);
-// const peerServer = ExpressPeerServer(server,{
-// debug:true
-// }
-// )
+
 const io = require("socket.io")(server);
 app.use(bodyparser.json());
-// app.use('/peerjs', peerServer)
-app.use("/livecode/user", userRoute); //all the req will be on /livecode/user
-app.use("/livecode/code", codeRoute); //all the req will be on /livecode/code
+
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin','*')
+  res.setHeader('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept,Authorization')
+  res.setHeader('Access-Control-Allow-Methods','GET,POST,PATCH,DELETE')
+  next()
+})
+app.use("/codezone/user", userRoute); //all the req will be on /livecode/user
+app.use("/codezone/code", codeRoute); //all the req will be on /livecode/code
 app.use((req, res, next) => {
   throw new HttpError("Could not find this route", 404);
 });
@@ -56,7 +58,7 @@ io.on("connection", (socket) => {
 
 mongoose
   .connect(
-    "mongodb+srv://Paragthakur:Q49OO306N1iMnME1@cluster0.n7rtf.gcp.mongodb.net/LiveCode?retryWrites=true&w=majority",
+    "mongodb+srv://Paragthakur:Q49OO306N1iMnME1@cluster0.n7rtf.gcp.mongodb.net/CodeZone?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

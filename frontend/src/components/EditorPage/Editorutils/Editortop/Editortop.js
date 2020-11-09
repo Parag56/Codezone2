@@ -24,10 +24,9 @@ function Editortop({ socket }) {
         <li>
           <Link to="#">Share</Link>
         </li>
-        <li>
+        
           {auth.isloggedin && (
-            <React.Fragment>
-              <Link to="#" onClick={() => setModalShow3(true)}>
+              <li><Link to="#" onClick={() => setModalShow3(true)}>
                 Drawing
               </Link>
               <MyVerticallyCenteredModal3
@@ -35,10 +34,10 @@ function Editortop({ socket }) {
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
               />
-            </React.Fragment>
+              </li>
           )}
           {!auth.isloggedin && (
-            <React.Fragment>
+              <li>
               <Link to="#" onClick={() => setModalShow4(true)}>
                 Drawing
               </Link>
@@ -46,16 +45,11 @@ function Editortop({ socket }) {
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
               />
-            </React.Fragment>
+              </li>
           )}
-        </li>
         {!auth.isloggedin && (
           <li>
             <Link to="#" onClick={()=>setModalShow4(true)}>Login</Link>
-            <MyVerticallyCenteredModal4
-             show={modalShow4}
-             onHide={()=>setModalShow4(false)}
-            />
           </li>
         )}
       </ul>
