@@ -8,6 +8,7 @@ let handlechange;
 function Codearea({socket}) {
   //state for mangaging the themes
   const [theme, setTheme] = useState("light");
+  const [lang,setlang]=useState('cpp')
   //let us access the room id
   const roomId = useParams().uid
 
@@ -18,7 +19,6 @@ function Codearea({socket}) {
   useEffect(() => {
     socket.emit('join-room', roomId)
   }, [])
-
   //changing the state to the new updated value
   useEffect(() => {
     socket.on("changed-value", (changedvalue) => {
@@ -39,8 +39,20 @@ function Codearea({socket}) {
   
  const onLangSelectHandler = (e) => {
     const lang = e.target.value
+    setlang(lang)
     seteditorvalue(code[lang])
 }
+const options = {
+  selectOnLineNumbers: true,
+  renderIndentGuides: true,
+  colorDecorators: true,
+  cursorBlinking: "blink",
+  autoClosingQuotes: "always",
+  find: {
+      autoFindInSelection: "always"
+  },
+  snippetSuggestions: "inline"
+};
   return (
     <div className="outsidedesign">
       <div className="topheader">
@@ -65,7 +77,8 @@ function Codearea({socket}) {
         value={editorvalue}
         theme={theme}
         loading={<Loader />}
-        language="cpp"
+        language={lang}
+        options={options}
       />
     </div>
   );

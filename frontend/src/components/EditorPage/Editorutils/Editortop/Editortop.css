@@ -39,17 +39,25 @@
     font-size: 1.3rem;
     transform-origin: left;
     cursor: pointer;
- 
     font-weight: 600;
 }
-.editorfunctionsdesign li a{
+.editorfunctionsdesign li .editortop-li{
     color: #002244;
     text-decoration: none;
     padding: 30px 33px;
 }
-.editorfunctionsdesign a:hover{
-    border-bottom: 3px solid #00008B;
+.editorfunctionsdesign li span{
+    width: 0%;
+    transition: all 1.0s;
+}
+.editorfunctionsdesign li:hover{
     background-color: whitesmoke;
+}
+.editorfunctionsdesign li:hover span{
+    display: block;
+    background-color:darkblue;
+    height: 2.5px;
+    width: 100%;
 }
 .username{
     font-weight: 500;

@@ -17,16 +17,16 @@ function NavLinks() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="#" onClick={() => setModalShow1(true)}>
+        <div className="navli-divs" onClick={() => setModalShow1(true)}>
           Welcome
-        </Link>
+        </div>
         <MyVerticallyCenteredModal1 
           show={modalShow1}
           onHide={() => setModalShow1(false)}
         />
       </li>
       <li>
-        <Link to="#" onClick={() => setModalShow2(true)}>About Us</Link>
+        <div className="navli-divs" onClick={() => setModalShow2(true)}>About Us</div>
         <MyVerticallyCenteredModal2
           show={modalShow2}
           onHide={() => setModalShow2(false)}
@@ -34,7 +34,7 @@ function NavLinks() {
       </li>
       {!auth.isloggedin && (
         <li>
-        <Link to="#" onClick={()=>setModalShow4(true)}>Signup/Login</Link>
+        <div className="navli-divs" onClick={()=>setModalShow4(true)}>Signup/Login</div>
         <MyVerticallyCenteredModal4
           show={modalShow4}
           onHide={() => setModalShow4(false)}
@@ -44,7 +44,7 @@ function NavLinks() {
       {
         auth.isloggedin &&(
           <li>
-            <Link to="#" onClick={auth.logout}>Logout</Link>
+            <div className="navli-divs" onClick={auth.logout}>Logout</div>
           </li>
         )
       }

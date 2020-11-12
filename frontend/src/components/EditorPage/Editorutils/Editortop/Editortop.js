@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./Editortop.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link} from "react-router-dom";
 import logo from "./logo1.png";
 import MyVerticallyCenteredModal3 from "./BoardModal";
 import { AuthContext } from "../../../Context/Auth-context";
 import MyVerticallyCenteredModal4 from "../../../Login/LoginModal";
-function Editortop({ socket }) {
+function Editortop({ socket,username }) {
   const auth = useContext(AuthContext);
-  const [modalShow3, setModalShow3] = React.useState(false);
+  const [modalShow3, setModalShow3] = useState(false);
   const [modalShow4, setModalShow4] = useState(false);
   return (
     <div className="editortop">
@@ -16,19 +16,21 @@ function Editortop({ socket }) {
       </div>
 
       <div className="userinfo">
-        <span className="username">ThisIsUserDope</span>
+        <span className="username">{username}</span>
         <span className="cstyledesign">C++</span>
       </div>
 
       <ul className="editorfunctionsdesign">
         <li>
-          <Link to="#">Share</Link>
+          <div className="editortop-li">Share</div>
+          <span></span>
         </li>
         
           {auth.isloggedin && (
-              <li><Link to="#" onClick={() => setModalShow3(true)}>
+              <li><div className="editortop-li" onClick={() => setModalShow3(true)}>
                 Drawing
-              </Link>
+              </div>
+              <span></span>
               <MyVerticallyCenteredModal3
                 socket={socket}
                 show={modalShow3}
@@ -38,9 +40,10 @@ function Editortop({ socket }) {
           )}
           {!auth.isloggedin && (
               <li>
-              <Link to="#" onClick={() => setModalShow4(true)}>
+              <div className="editortop-li" onClick={() => setModalShow4(true)}>
                 Drawing
-              </Link>
+              </div>
+              <span></span>
               <MyVerticallyCenteredModal4
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
@@ -49,7 +52,14 @@ function Editortop({ socket }) {
           )}
         {!auth.isloggedin && (
           <li>
-            <Link to="#" onClick={()=>setModalShow4(true)}>Login</Link>
+            <div className="editortop-li" onClick={()=>setModalShow4(true)}>Login</div>
+            <span></span>
+          </li>
+        )}
+        {auth.isloggedin&&(
+          <li>
+            <div className="editortop-li" onClick={auth.logout}>Logout</div>
+            <span></span>
           </li>
         )}
       </ul>

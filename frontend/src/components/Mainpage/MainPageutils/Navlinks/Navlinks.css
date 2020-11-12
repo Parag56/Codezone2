@@ -47,7 +47,7 @@
     padding: 1rem;
   }
   
-  .codezone-header .codezone-nav ul li a {
+  .codezone-header .codezone-nav ul li .navli-divs {
     position: relative;
     margin: 0 15px;
     text-decoration: none;
@@ -57,8 +57,31 @@
     font-weight: 700px;
     transition: 0.7s;
     z-index: 2;
+    cursor: pointer;
+  }
+  .codezone-header .codezone-nav ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-weight: 700px;
+    transition: 0.7s;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .codezone-header .codezone-nav ul li .navli-divs:hover {
+    color: #999;
+    z-index: 2;
   }
   
+  .codezone-header.sticky .logo,
+  .codezone-header.sticky ul li .navli-divs {
+    color: black;
+    z-index: 2;
+  }
   .codezone-header .codezone-nav ul li a:hover {
     color: #999;
     z-index: 2;

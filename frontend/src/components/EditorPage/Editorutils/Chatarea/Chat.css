@@ -1,0 +1,35 @@
+.chatpart{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 2px 12px rgba(0,0,0,.5);
+}
+.innerchatpart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+   
+}
+.chatpart{
+    overflow-y: auto;
+}
+.messagetype{
+    width: 100%;
+    height: 15%;
+}
+.messagetype input{
+    width: 80%;
+    border: 1px solid black;
+    height: 2rem;
+}
+.messagetype button{
+    width: 20%;
+    height: 100%;
+    background-color: skyblue;
+    border: 1px solid black;
+
+} 

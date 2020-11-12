@@ -1,27 +1,48 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useContext,useState} from 'react'
 import './Editor.css'
 import Editortop from './Editorutils/Editortop/Editortop'
 import Codearea from './Editorutils/Codearea/Codearea'
 import socketioclient from 'socket.io-client'
+import $ from 'jquery'
+import {AuthContext} from '../Context/Auth-context'
+import names from './names'
+import Chatarea from './Editorutils/Chatarea/Chatarea'
 let socket;
 const ENDPOINT = "http://localhost:5000/";
+socket=socketioclient(ENDPOINT)
 function Editor() {
-        socket=socketioclient(ENDPOINT)
-
+        const [username,setusername]=useState(null)
+        const auth=useContext(AuthContext)
+        useEffect(()=>{
+            const uid=auth.userid
+            if(uid!=null){
+            const url=`http://localhost:5000/codezone/user/${uid}`
+            $.ajax({
+              type:'GET',
+              crossDomain:true,
+              dataType:'json',
+              url,
+              success:function(data){
+                  setusername(data.user.name)
+              },
+              error:function(err){
+                  console.log(err.message)
+              }
+            })
+        }
+        },[auth.userid,username])
        
     return (
         <div>
-           <Editortop socket={socket}/>
+           <Editortop socket={socket} username={username?username:names[Math.floor(Math.random()*57)]}/>
            <div className="codeandvideo">
               <div className="codearea">
                   <div className="codeareastyles">
                   <Codearea socket={socket}/>
                   </div>
               </div>
-             
             <div className="videoarea">
-                <h2>Video Area</h2>
-
+                <Chatarea name={username} socket={socket}/>
             </div>
            </div>
         </div>

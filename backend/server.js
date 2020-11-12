@@ -41,17 +41,25 @@ io.on("connection", (socket) => {
   //handling the room joining
   socket.on("join-room", (roomID) => {
     socket.join(roomID);
-    // socket.to(roomID).broadcast.emit("user-connected", uid);
+    socket.on('chat-room',(username)=>{
+      socket.emit('message',{text:`Welcome ${username} to the chat`,user:username})
+      socket.to(roomID).broadcast.emit('message',{text:`${username} joined`,user:username})
+      
+    socket.on('sendmessage',(message,callback)=>{
+      io.to(roomID).emit('message',{text:message,user:username})
+      callback()
+    })
+    })
+
     socket.on("drawing", (data) =>
       socket.to(roomID).broadcast.emit("drawing", data)
     );
     socket.on("inputchanged", (value) => {
       socket.to(roomID).broadcast.emit("changed-value", value);
     });
-
+   
     socket.on("disconnect", () => {
       console.log("user-disconnected");
-      // socket.to(roomID).broadcast.emit("user-disconnected", uid);
     });
   });
 });

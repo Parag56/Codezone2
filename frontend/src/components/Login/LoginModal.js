@@ -29,8 +29,8 @@ function MyVerticallyCenteredModal4(props) {
         success: function (data) {
           console.log("success");
           setisloading(false);
-          auth.login();
-          console.log(JSON.stringify(data));
+          auth.login(data.userid,data.token);
+          // console.log(JSON.stringify(data));
         },
         error: function (error) {
           setisloading(false);
@@ -57,8 +57,8 @@ function MyVerticallyCenteredModal4(props) {
         success: function (data) {
           console.log("success");
           setisloading(false);
-          auth.login();
-          console.log(JSON.stringify(data));
+          auth.login(data.userid,data.token);
+          // console.log(JSON.stringify(data));
         },
         error: function (error) {
           setisloading(false);

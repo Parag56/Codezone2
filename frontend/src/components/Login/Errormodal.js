@@ -9,7 +9,7 @@ function ErrorModal({error,onClear}) {
     }
     useEffect(()=>{
       if(error!=null)setShow(true)
-    })
+    },[error])
     return (
       <>
         <Modal show={show} onHide={handleClose} >

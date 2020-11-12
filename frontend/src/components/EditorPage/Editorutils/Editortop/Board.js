@@ -140,7 +140,7 @@ const Board = ({socket}) => {
     }
 
     socket.on('drawing', onDrawingEvent);
-  }, []);
+  });
 
   // ------------- The Canvas and color elements --------------------------
 

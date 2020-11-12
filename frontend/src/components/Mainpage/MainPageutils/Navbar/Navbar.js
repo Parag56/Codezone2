@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './Navbar.css'
 import NavLinks from '../Navlinks/Navlinks'
 import mylogo from './logo1.png'

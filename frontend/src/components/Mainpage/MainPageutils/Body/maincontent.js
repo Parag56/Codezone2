@@ -11,6 +11,9 @@ import cicon from "./computer.svg";
 import python from "./python.svg";
 import java from "./java.svg";
 import javascript from "./js-file.svg";
+import save from "./floppy-disk.svg";
+import canvas from "./canvas.svg";
+import them from "./programming.svg"
 function Maincontent() {
   return (
     <div className="main-bodycontent">
@@ -39,18 +42,30 @@ function Maincontent() {
           content=" Start coding with your favorite language on any platform, OS, and device."
         />
         <FeatureCard
-          heading="Live Video Share"
+          heading="Live Chat"
           icon={textshare}
-          content="Live video sharing is possible with the people working on a project."
+          content="Live chatting while coding is also possible, as there is an additional chat window"
         />
         <FeatureCard
-          heading="Real-Time Share"
+          heading="Real-Time Collab"
           icon={realtime}
           content="Live collaboration is possible with the people working on a project and changes can be made by all the persons working on the project."
         />
-        <FeatureCard />
-        <FeatureCard />
-        <FeatureCard />
+         <FeatureCard
+           heading="Code-Saving"
+           icon={save}
+           content="You can save the code in your device for future use." 
+            />
+        <FeatureCard
+           heading="Drawing-Board"
+           icon={canvas}
+           content="Drawing board is also available so that you can easily draw your illustrations which makes understanding easy."
+        />
+        <FeatureCard 
+         heading="Themes"
+         icon={them}
+         content="Two types of themes are available Dark-Mode and Light-Mode."
+        />
       </div>
       <div className="lastsection">
         <div className="code__heading">

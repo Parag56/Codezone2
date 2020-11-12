@@ -15,7 +15,7 @@ const error=new HttpError('Something went wrong could not fetch the codes,please
 return next(error)
 }
 if(codes.length==0){
-    return next('could not find a code for that user id',404)
+    return next(new HttpError('could not find a code for that user id',404))
 }
 res.status(200).json({codes:codes.map(code=>code.toObject({getters:true}))})
 }

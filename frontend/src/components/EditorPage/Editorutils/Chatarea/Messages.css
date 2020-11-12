@@ -1,0 +1,7 @@
+.messages{
+    flex: auto;
+
+}
+.innerchatpart{
+    overflow-y: auto;
+}
