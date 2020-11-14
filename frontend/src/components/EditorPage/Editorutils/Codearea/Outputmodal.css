@@ -1,0 +1,14 @@
+.successfulcommpile{
+    color: green!important;
+}
+.errorcompile{
+    color: red!important;
+}
+.modalbody div{
+padding-top: .5rem;
+color: black;
+font-weight: 600;
+}
+.modalbody span{
+   font-weight: normal;
+}

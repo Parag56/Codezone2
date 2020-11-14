@@ -6,6 +6,7 @@ import "./LoginModal.css";
 import { AuthContext } from "../Context/Auth-context";
 import $ from "jquery";
 import ErrorModal from "./Errormodal";
+import Loader from '../Loader/Loader'
 function MyVerticallyCenteredModal4(props) {
   const auth = useContext(AuthContext);
   const [isloginmode, setisloginmode] = useState(true);
@@ -16,7 +17,7 @@ function MyVerticallyCenteredModal4(props) {
     setisloading(true);
     if (isloginmode) {
       let data = {};
-      const url = "http://localhost:5000/codezone/user/login";
+      const url = `${process.env.REACT_APP_BACKEND_URL}/codezone/user/login`;
       const email = document.getElementById("formBasicEmail").value;
       const password = document.getElementById("formBasicPassword").value;
       data.email = email;
@@ -42,7 +43,7 @@ function MyVerticallyCenteredModal4(props) {
       });
     } else {
       let data = {};
-      const url = "http://localhost:5000/codezone/user/signup";
+      const url =`${process.env.REACT_APP_BACKEND_URL}/codezone/user/signup`;
       const name = document.getElementById("formBasicusername").value;
       const email = document.getElementById("formBasicEmail").value;
       const password = document.getElementById("formBasicPassword").value;
@@ -79,12 +80,14 @@ function MyVerticallyCenteredModal4(props) {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={errorHandler} />
+    
       <Modal
         {...props}
         size="md"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-      >
+      >  {isloading &&
+        <Loader/>}
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             {isloginmode ? "LOGIN" : "SIGNUP"}

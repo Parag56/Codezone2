@@ -18,6 +18,6 @@ const java = `class test {
 const python = `#write your code here
 `
 
-export const code = {
+export const dummycode = {
     c, cpp, java, python
 }

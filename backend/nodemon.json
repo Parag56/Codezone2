@@ -1,0 +1,8 @@
+{
+    "env":{
+        "DB_USER":"Paragthakur",
+        "DB_PASSWORD":"Q49OO306N1iMnME1",
+        "DB_NAME":"CodeZone",
+        "JWT_KEY":"Codezone_secret_dont_share"
+    }
+}

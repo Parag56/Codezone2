@@ -1,0 +1,49 @@
+.intro {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.intro-text {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  z-index: 2000;
+}
+.intro-text h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  z-index: 2000;
+}
+.text sider {
+  color: #f2aa4cff;
+  z-index: 2000;
+}
+.slider {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(120%);
+  z-index: 2000;
+}
+.hide {
+  background: black;
+  z-index: 2000;
+}
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+  z-index: 2000;
+}

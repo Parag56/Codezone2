@@ -52,7 +52,7 @@ const signup = async (req, res, next) => {
   try {
     token = jwt.sign(
       { userdId: newuser.id, email: newuser.email },
-      "Codezone_secret_dont_share",
+      process.env.JWT_KEY,
       { expiresIn: "1h" }
     );
   } catch (err) {
@@ -105,7 +105,7 @@ const login = async (req, res, next) => {
   try {
     token = jwt.sign(
       { userdId: existingUser.id, email: existingUser.email },
-      "Codezone_secret_dont_share",
+      process.env.JWT_KEY,
       { expiresIn: "1h" }
     );
   } catch (err) {

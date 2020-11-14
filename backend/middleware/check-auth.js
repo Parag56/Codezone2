@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     if (!token) {
       throw new HttpError("Authentication failed!", 401);
     }
-    const decodedToken = jwt.verify(token, "Codezone_secret_dont_share");
+    const decodedToken = jwt.verify(token,process.env.JWT_KEY);
     req.userData = { userId: decodedToken.userId };
     next();
   } catch (err) {

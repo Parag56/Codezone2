@@ -1,49 +1,93 @@
+.topheader {
+  padding: 20px;
+  border-bottom: 2px solid black;
+  background-color: #002244;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.outsidedesign {
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.5);
+}
+.themetog button {
+  padding: 0.3rem 1.2rem;
+  background: none;
+  border: 1.8px solid white;
+  color: white;
+}
+.themetog .runbtn {
+  padding: 0.3rem 1.7rem;
+  margin-left: 1rem;
+}
+.themetog button:hover {
+  cursor: pointer;
+}
+.themetog button::selection {
+  border: none;
+}
+button:focus {
+  outline: 0 !important;
+}
+#lang {
+  border: 1.8px solid white;
+  color: white;
+  background-color: transparent;
+  margin-left: 1rem;
+  padding: 0.3rem 1.7rem;
+}
 
-.topheader{
-    padding: 20px;
-    border-bottom: 2px solid black;
-    background-color: #002244;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+#lang option {
+  color: darkblue;
 }
-.outsidedesign{
-    
-    box-shadow: 2px 3px 12px rgba(0,0,0,.5);
+#lang option:hover {
+  color: white !important;
+  background-color: darkblue !important;
 }
-.themetog button{
-    padding: .3rem 1.2rem;
-    background: none;
-    border: 1px solid white;
+
+.new{
+    display: inline-block;
+    margin-left: 4.5rem;
     color: white;
 }
-.themetog .runbtn{
-    padding: .3rem 1.7rem;
-    margin-left: 1rem;
-}
-.themetog button:hover{
+.custominput input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
     cursor: pointer;
-}
-.themetog button::selection{
-    border: none;
-}
-button:focus{
-    outline: 0 !important;
-}
-#lang{
-    border: 1px solid white;
-    color: white;
+  }
+  
+  .custominput label {
+    position: relative;
+    cursor: pointer;
+  }
+  .custominput label:before {
+    content:'';
+    -webkit-appearance: none;
     background-color: transparent;
-    margin-left: 1rem;
-    padding: .3rem 1.7rem;
-}
-
-#lang option{
-    color: darkblue;
-}
-#lang option:hover{
-    color: white!important;
-    background-color: darkblue!important;
-}
+    border: 2px solid white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .custominput input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4.5px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  

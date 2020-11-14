@@ -8,7 +8,7 @@ import {AuthContext} from '../Context/Auth-context'
 import names from './names'
 import Chatarea from './Editorutils/Chatarea/Chatarea'
 let socket;
-const ENDPOINT = "http://localhost:5000/";
+const ENDPOINT = process.env.REACT_APP_BACKEND_URL;
 socket=socketioclient(ENDPOINT)
 function Editor() {
         const [username,setusername]=useState(null)
@@ -16,7 +16,7 @@ function Editor() {
         useEffect(()=>{
             const uid=auth.userid
             if(uid!=null){
-            const url=`http://localhost:5000/codezone/user/${uid}`
+            const url=`${process.env.REACT_APP_BACKEND_URL}/codezone/user/${uid}`
             $.ajax({
               type:'GET',
               crossDomain:true,
