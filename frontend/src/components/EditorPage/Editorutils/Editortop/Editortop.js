@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
 import "./Editortop.css";
-import { Link} from "react-router-dom";
 import logo from "./logo1.png";
 import MyVerticallyCenteredModal3 from "./BoardModal";
 import { AuthContext } from "../../../Context/Auth-context";
 import MyVerticallyCenteredModal4 from "../../../Login/LoginModal";
+import MyVerticallyCenteredModal7 from './ShareLink'
 function Editortop({ socket,username }) {
   const auth = useContext(AuthContext);
   const [modalShow3, setModalShow3] = useState(false);
   const [modalShow4, setModalShow4] = useState(false);
+  const [modalShow7, setModalShow7] = useState(false);
   return (
+    <div>
+      <div className="solidborder"></div>
     <div className="editortop">
       <div>
         <img src={logo} className="logodesign" />
@@ -22,8 +25,12 @@ function Editortop({ socket,username }) {
 
       <ul className="editorfunctionsdesign">
         <li>
-          <div className="editortop-li">Share</div>
+          <div className="editortop-li" onClick={()=>setModalShow7(true)}>Share</div>
           <span></span>
+          <MyVerticallyCenteredModal7
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+              />
         </li>
         
           {auth.isloggedin && (
@@ -63,6 +70,7 @@ function Editortop({ socket,username }) {
           </li>
         )}
       </ul>
+    </div>
     </div>
   );
 }

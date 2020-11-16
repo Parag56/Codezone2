@@ -7,7 +7,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import { AuthContext } from "./Context/Auth-context";
-import Loader from './Loader/Loader'
+import Loader from "./Loader/Loader";
+import About from "./AboutPage/About";
 const EditorPage = React.lazy(() => import("./EditorPage/Editor"));
 let logouttimer;
 function Routerhandler() {
@@ -69,10 +70,13 @@ function Routerhandler() {
       }}
     >
       <Router>
-        <Suspense fallback={<Loader/>}>
+        <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/">
               <MainPage />
+            </Route>
+            <Route exact path="/about">
+              <About />
             </Route>
             <Route exact path="/editor/:uid">
               <EditorPage />

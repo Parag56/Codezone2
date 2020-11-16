@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import "./Navlinks.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MyVerticallyCenteredModal1 from "./Welcomemodal";
-import MyVerticallyCenteredModal2 from './Aboutmodal' 
 import MyVerticallyCenteredModal4 from '../../../Login/LoginModal'
 import {AuthContext} from '../../../Context/Auth-context'
 function NavLinks() {
@@ -26,11 +25,8 @@ function NavLinks() {
         />
       </li>
       <li>
-        <div className="navli-divs" onClick={() => setModalShow2(true)}>About Us</div>
-        <MyVerticallyCenteredModal2
-          show={modalShow2}
-          onHide={() => setModalShow2(false)}
-        />
+        <Link to="/about" className="navli-divs">About Us</Link>
+       
       </li>
       {!auth.isloggedin && (
         <li>

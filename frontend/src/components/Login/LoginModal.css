@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+.fnt{
+    font-family: 'Noto Serif JP', serif;
+}
+.small{
+    font-size: 10px;
+}
+.mrgn{
+    margin-bottom:20px;
+    width:100%;
+}
+.lgin{
+    height:30px;
+    width:30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.fancy{
+    background-color:#F2AA4CFF;
+    border-radius: 5px;
+    border:1px solid black;
+    color:white;
+    font-family: 'Noto Serif JP', serif;
+    padding: 5px 10px;
+}
+.fancy:hover{
+    background-color: black;
+    color:#F2AA4CFF;
+    border:1px solid #F2AA4CFF;
+}
+.fancy:active{
+    background-color: black;
+    color:#F2AA4CFF;
+    border:1px solid #F2AA4CFF;
+}
 .loginfooter{
     display: flex!important;
     justify-content: space-between;

@@ -1,0 +1,208 @@
+.container {
+  height: 470px;
+  width: 300px;
+  display: inline-block;
+  margin: 100px;
+  position: relative;
+  box-shadow: 0 10px 20px black;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: "Abel", sans-serif;
+}
+.photu {
+  height: 83px;
+  width: 83px;
+  border-radius: 100px;
+  position: absolute;
+  right: 5%;
+  left: 0.5%;
+  bottom: 1%;
+}
+.im_age {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  border-radius: 50%;
+  border: 8px solid white;
+  position: relative;
+  top: 200px;
+  margin-left: 170px;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-20deg);
+}
+
+.shape {
+  height: 250px;
+  width: 400px;
+  background-color: rgb(109, 6, 6);
+  margin-left: -20px;
+  position: relative;
+  top: -80px;
+  box-shadow: 0 2px 15px black;
+  transform: rotate(25deg);
+}
+
+.name {
+  color: black;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.title {
+  color: rgb(105, 100, 109);
+}
+
+.para {
+  padding-left: 30px;
+  padding-right: 30px;
+  color: rgb(105, 100, 109);
+}
+
+.icons {
+  margin-top: 15px;
+}
+
+.icons i {
+  margin-left: 10px;
+  font-size: 20px;
+  transition: 0.3s;
+  color: rgb(40, 163, 194);
+}
+
+.icons i:hover {
+  transform: scale(1.1);
+  color: rgb(18, 192, 235);
+}
+@media screen and (min-width: 765px) and (max-width: 865px) {
+  .para {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: rgb(105, 100, 109);
+    position: absolute;
+    top: 300px;
+    font-size: 15px;
+  }
+  */ .title {
+    position: relative;
+    bottom: 500px;
+  }
+  .name {
+    position: relative;
+    bottom: 300px;
+  }
+  .title {
+    position: absolute;
+    bottom: 150px;
+    left: 70px;
+  }
+  .icons {
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+  }
+}
+@media screen and (max-width: 867px) {
+  .container {
+    font-size: 10px;
+    width: 259.59px;
+    height: 437.28px;
+    display: inline-block;
+    margin: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    box-shadow: 0 10px 20px black;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    font-family: "Abel", sans-serif;
+    font-size: 10px;
+  }
+
+  .im_age {
+    width: 84px;
+    height: 80.2px;
+    background-image: url("https://images.wallpaperscraft.com/image/man_silhouette_night_barbed_wire_115312_1280x720.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    position: relative;
+    top: 470px;
+    left: 85px;
+    margin-left: 100px;
+    box-shadow: 0 2px 15px rgb(58, 54, 54);
+    transform: rotate(-20deg);
+  }
+
+  .shape {
+    width: 736.99px;
+    height: 514.41px;
+    background-color: rgb(109, 6, 6);
+    position: relative;
+    top: -300px;
+    box-shadow: 0 2px 15px black;
+    transform: rotate(20deg);
+  }
+  .name {
+    font-size: 20px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 765px) {
+  .container {
+    font-size: 10px;
+    width: 220.83px;
+    height: auto;
+    display: inline-block;
+    margin: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    box-shadow: 0 10px 20px black;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    font-family: "Abel", sans-serif;
+    font-size: 10px;
+  }
+
+  .im_age {
+    width: 81.67px;
+    height: 80px;
+    background-image: url("https://images.wallpaperscraft.com/image/man_silhouette_night_barbed_wire_115312_1280x720.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    position: relative;
+    top: 200px;
+    left: 35px;
+    margin-left: 100px;
+    box-shadow: 0 2px 15px rgb(58, 54, 54);
+    transform: rotate(-20deg);
+  }
+
+  .shape {
+    width: 325.73px;
+    height: 239.01px;
+    background-color: rgb(109, 6, 6);
+    position: relative;
+    top: -110px;
+    box-shadow: 0 2px 15px black;
+    transform: rotate(25deg);
+  }
+  .name {
+    font-size: 15px;
+  }
+  .title {
+    font-size: 15px;
+  }
+}

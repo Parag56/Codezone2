@@ -10,6 +10,11 @@
     filter: drop-shadow(0 0 5px grey);
     top: 0;
     color:  #002244;
+    /* border-top: 5px solid #f2aa4cff; */
+}
+.solidborder{
+    height: 5px;
+    background-color: #f2aa4cff;
 }
 .logodesign{
     height: 60px;
@@ -44,15 +49,16 @@
 .editorfunctionsdesign li .editortop-li{
     color: #002244;
     text-decoration: none;
-    padding: 30px 33px;
+    margin-top:35px;
+    padding-bottom: 30px;
+    padding-left: 33px;
+    padding-right: 33px;
 }
 .editorfunctionsdesign li span{
     width: 0%;
     transition: all 1.0s;
 }
-.editorfunctionsdesign li:hover{
-    background-color: whitesmoke;
-}
+
 .editorfunctionsdesign li:hover span{
     display: block;
     background-color:darkblue;

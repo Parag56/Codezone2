@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext ,useEffect} from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -7,6 +7,7 @@ import { AuthContext } from "../Context/Auth-context";
 import $ from "jquery";
 import ErrorModal from "./Errormodal";
 import Loader from '../Loader/Loader'
+import LOGIN from './lock.svg'
 function MyVerticallyCenteredModal4(props) {
   const auth = useContext(AuthContext);
   const [isloginmode, setisloginmode] = useState(true);
@@ -80,7 +81,7 @@ function MyVerticallyCenteredModal4(props) {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={errorHandler} />
-    
+      
       <Modal
         {...props}
         size="md"
@@ -91,6 +92,7 @@ function MyVerticallyCenteredModal4(props) {
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             {isloginmode ? "LOGIN" : "SIGNUP"}
+            <img className="lgin" src={LOGIN}></img>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -112,11 +114,11 @@ function MyVerticallyCenteredModal4(props) {
 
                 <Form.Group controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
+                  <Form.Control className="mrgn" type="password" placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <button  className="fancy" type="submit">
                   Submit
-                </Button>
+                </button>
               </React.Fragment>
             )}
             {isloginmode && (
@@ -133,20 +135,20 @@ function MyVerticallyCenteredModal4(props) {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <button  className="fancy" type="submit">
                   Submit
-                </Button>
+                </button>
               </React.Fragment>
             )}
           </Form>
         </Modal.Body>
         <Modal.Footer className="loginfooter">
-          <Button onClick={switchhandler}>
-            Switch to {isloginmode ? "Signup" : "Login"}
-          </Button>
-          <Button className="welc-btn" onClick={props.onHide}>
+          <button  className="fancy" onClick={switchhandler}>
+          SWITCH-TO-{isloginmode ? "Signup" : "Login"}
+          </button>
+          <button  className="fancy" onClick={props.onHide}>
             Close
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </React.Fragment>
