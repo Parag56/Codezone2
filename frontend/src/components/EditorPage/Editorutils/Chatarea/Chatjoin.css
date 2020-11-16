@@ -34,8 +34,9 @@
 .joinchatbtn:hover{
     transform: scale(1.05);
 }
-.joinchatbtn:active{
+.joinchatbtn:focus{
     border: 3px solid darkblue;
+    animation: huerotate3 5s infinite !important;
 }
 @keyframes huerotate3{
     from{
