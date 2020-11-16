@@ -1,47 +1,51 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff137abc7b668ddbc3e6bf9f3da7eaef",
+    "revision": "ffa66662711e4d645aca17186b37efb9",
     "url": "/index.html"
   },
   {
-    "revision": "ea82170eebf5949a75e7",
+    "revision": "d5af1baa02ff6ae182fa",
     "url": "/static/css/3.2a86faee.chunk.css"
   },
   {
-    "revision": "7a1861b80ce7b35f1aa8",
-    "url": "/static/css/4.a0f4d87e.chunk.css"
+    "revision": "0018fe064b07589a7bfe",
+    "url": "/static/css/4.6bc5c81e.chunk.css"
   },
   {
-    "revision": "ac0ef95b87c51b4a52a3",
-    "url": "/static/css/main.761b5fd4.chunk.css"
+    "revision": "e1c350a1336d626cf819",
+    "url": "/static/css/main.1c36a665.chunk.css"
   },
   {
-    "revision": "91c979e6b252ba874807",
-    "url": "/static/js/2.aae8b608.chunk.js"
+    "revision": "18718017a635215df3e3",
+    "url": "/static/js/2.adbe2495.chunk.js"
   },
   {
     "revision": "86ef3143c087fee71f26295c47370050",
-    "url": "/static/js/2.aae8b608.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.adbe2495.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ea82170eebf5949a75e7",
-    "url": "/static/js/3.f4b43614.chunk.js"
+    "revision": "d5af1baa02ff6ae182fa",
+    "url": "/static/js/3.dddf2b84.chunk.js"
   },
   {
-    "revision": "8c99123f92da46c61348a2e94c66403f",
-    "url": "/static/js/3.f4b43614.chunk.js.LICENSE.txt"
+    "revision": "20d33a5bc1cb14cd0d66eace0ff5e7c1",
+    "url": "/static/js/3.dddf2b84.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7a1861b80ce7b35f1aa8",
-    "url": "/static/js/4.ec76bb07.chunk.js"
+    "revision": "0018fe064b07589a7bfe",
+    "url": "/static/js/4.29b2fbe8.chunk.js"
   },
   {
-    "revision": "ac0ef95b87c51b4a52a3",
-    "url": "/static/js/main.97c5ca64.chunk.js"
+    "revision": "e1c350a1336d626cf819",
+    "url": "/static/js/main.81d1db41.chunk.js"
   },
   {
-    "revision": "41361abe6604bff158a5",
-    "url": "/static/js/runtime-main.6acdcc7a.js"
+    "revision": "e948882d02d3dcb1e493",
+    "url": "/static/js/runtime-main.d380240a.js"
+  },
+  {
+    "revision": "61ddf2ed5585e09eb344981f036cb456",
+    "url": "/static/media/Prajwal.61ddf2ed.jpg"
   },
   {
     "revision": "6050b2d3965bbbe6c4174f60d9ed86a4",
@@ -72,8 +76,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/js-file.352fb281.svg"
   },
   {
+    "revision": "2d38dbe1531573b6e01388f31bb1b05d",
+    "url": "/static/media/lock.2d38dbe1.svg"
+  },
+  {
     "revision": "2d4b61b21ed255398ed5219b26ef3b6e",
     "url": "/static/media/logo1.2d4b61b2.png"
+  },
+  {
+    "revision": "227dd5f3d2b1632a74bee3c3e1655d70",
+    "url": "/static/media/parag_2.227dd5f3.jpg"
   },
   {
     "revision": "a983d25422e558c8d5512c701d268254",
@@ -90,5 +102,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0ddf2eef9692095a059106a77e108359",
     "url": "/static/media/textshare.0ddf2eef.svg"
+  },
+  {
+    "revision": "bc5085e6789597e65b9a07fec031fc68",
+    "url": "/static/media/web-development.bc5085e6.svg"
   }
 ]);

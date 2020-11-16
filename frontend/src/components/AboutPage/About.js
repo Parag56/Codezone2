@@ -18,9 +18,9 @@ function About() {
         </div>
         <div className="line2"></div>
       </div>
-      <div className="lastsection">
-        <div className="code__heading">
-          <h1 className="lang">
+      <div className="lastsection2">
+        <div className="code__heading2">
+          <h1 className="lang2">
             Developer <span>Team</span>
           </h1>
         </div>
