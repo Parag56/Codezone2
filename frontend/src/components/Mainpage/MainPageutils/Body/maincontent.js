@@ -23,7 +23,7 @@ function Maincontent() {
           <h2>
             Code<span>zone</span>
           </h2>
-          <p>Create compile share</p>
+          <p>Collab Compile share</p>
           <Link to={`/editor/${uuid()}`} className="get-startedbtn">
             Get started
           </Link>

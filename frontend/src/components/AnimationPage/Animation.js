@@ -22,7 +22,7 @@ function Animation() {
             </span>
           </h1>
           <h1 className="hide">
-            <span className="text">Collab Draw Share</span>
+            <span className="text">Collab Compile Share</span>
           </h1>
         </div>
       </div>
