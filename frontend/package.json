@@ -51,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@convergencelabs/monaco-collab-ext": "^0.3.1"
   }
 }

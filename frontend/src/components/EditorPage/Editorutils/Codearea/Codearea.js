@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ControlledEditor } from "@monaco-editor/react";
+import {ControlledEditor} from "@monaco-editor/react";
 import { FillSpinner as Loader } from "react-spinners-kit";
 import "./Codearea.css";
 import { dummycode } from "../../default";
@@ -9,7 +9,7 @@ import LoadingAnim from "../../../Loader/Loader";
 import  MyVerticallyCenteredModal5   from './Outputmodal'
 import  MyVerticallyCenteredModal6   from './Inputmodal'
 let handlechange;
-function Codearea({ socket }) {
+function Codearea({ socket,personname }) {
   //states
   const [theme, setTheme] = useState("light");
   const [lang, setlang] = useState("cpp");
@@ -24,13 +24,14 @@ function Codearea({ socket }) {
   const [isloading, setisloading] = useState(false);
   const [modalShow5, setModalShow5] = useState(false);
   const [modalShow6, setModalShow6] = useState(false);
+  const [status,setstatus]=useState(false)
   //accessing the room id
   const roomId = useParams().uid;
   
 
   //emitting event for joining a room
   useEffect(() => {
-    socket.emit("join-room", roomId);
+    socket.emit("join-room", roomId,personname);
   }, []);
   //changing the state to the new updated value
   useEffect(() => {
@@ -76,6 +77,7 @@ function Codearea({ socket }) {
         settime(data.response.run_status.time_used)
         setoutput(data.response.run_status.output_html)
         setexitstatus(data.response.run_status.exit_code)
+        setstatus(data.response.run_status.status_detail)
         setModalShow5(true)
       },
       error: function (err) {
@@ -109,6 +111,7 @@ function Codearea({ socket }) {
           show={modalShow5}
           onHide={() => setModalShow5(false)}
           output={output}
+          status={status}
           exitcode={exitstatus}
           />
          <MyVerticallyCenteredModal6

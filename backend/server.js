@@ -48,8 +48,10 @@ io.on("connection", (socket) => {
   console.log("New client connected");
 
   //handling the room joining
-  socket.on("join-room", (roomID) => {
+  socket.on("join-room", (roomID,username) => {
     socket.join(roomID);
+    socket.to(roomID).emit('welcome',username)
+    socket.to(roomID).broadcast.emit('notification',username)
     socket.on("chat-room", (username) => {
       socket.emit("message", {
         text: `Welcome ${username} to the chat`,
@@ -61,7 +63,7 @@ io.on("connection", (socket) => {
           text: `${username} joined`,
           user: username,
         });
-
+       
       socket.on("sendmessage", (message, callback) => {
         io.to(roomID).emit("message", { text: message, user: username });
         callback();
@@ -76,6 +78,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("disconnect", () => {
+      socket.to(roomID).broadcast.emit("leavenotification",username)
       console.log("user-disconnected");
     });
   });

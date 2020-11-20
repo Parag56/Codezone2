@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
-import Messages from './Messages'
+import Messages from "./Messages";
 function Chat({ socket, joinparam }) {
   const ENDPOINT = socket.io.uri;
   const [username, setname] = useState(joinparam.name);
@@ -17,7 +17,7 @@ function Chat({ socket, joinparam }) {
       socket.emit("disconnect");
       socket.off();
     };
-  }, [ENDPOINT,joinparam]);
+  }, [ENDPOINT, joinparam]);
 
   useEffect(() => {
     socket.on("message", (message) => {
@@ -34,31 +34,39 @@ function Chat({ socket, joinparam }) {
     }
   };
   console.log(message, messages);
+  useEffect(() => {
+    const msgerChat = document.querySelector(".msger-chat");
+    msgerChat.scrollTop += 500;
+  });
   return (
     <div className="chatpart">
-      <div className="innerchatpart">
-          <Messages Messages={messages} name={username}/>
-        <div className="messagetype">
-          <input
-            value={message}
-            placeholder="Type a message...."
-            onChange={(event) => {
-              setmessage(event.target.value);
-            }}
-            onKeyPress={(event) =>
-              event.key === "Enter" ? sendmessage(event) : null
-            }
-          />
-          <button
-            className="sendbutton"
-            onClick={(event) => {
-              sendmessage(event);
-            }}
-          >
-            Send
-          </button>
-        </div>
-      </div>
+      <main className="msger-chat">
+        <Messages Messages={messages} name={username} />
+      </main>
+
+      <form class="msger-inputarea">
+        <input
+          type="text"
+          className="msger-input"
+          value={message}
+          placeholder="Type a message...."
+          onChange={(event) => {
+            setmessage(event.target.value);
+          }}
+          onKeyPress={(event) =>
+            event.key === "Enter" ? sendmessage(event) : null
+          }
+        />
+        <button
+          type="submit"
+          onClick={(event) => {
+            sendmessage(event);
+          }}
+          className="msger-send-btn"
+        >
+          Send
+        </button>
+      </form>
     </div>
   );
 }

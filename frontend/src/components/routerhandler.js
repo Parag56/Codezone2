@@ -14,10 +14,12 @@ let logouttimer;
 function Routerhandler() {
   const [token, settoken] = useState(null);
   const [userid, setuserid] = useState(null);
+  const [username,setusername]=useState(null)
   const [tokenexpirationdate, settokenexpirationdate] = useState();
-  const login = useCallback((uid, token, expirationdate) => {
+  const login = useCallback((uid, token,username, expirationdate) => {
     settoken(token);
     setuserid(uid);
+    setusername(username)
     const tokenexpirationdate =
       expirationdate || new Date(new Date().getTime() + 1000 * 60 * 60);
     settokenexpirationdate(tokenexpirationdate);
@@ -26,6 +28,7 @@ function Routerhandler() {
       JSON.stringify({
         userId: uid,
         token: token,
+        username:username,
         expiration: tokenexpirationdate.toISOString(),
       })
     );
@@ -33,6 +36,7 @@ function Routerhandler() {
   const logout = useCallback(() => {
     settoken(null);
     setuserid(null);
+    setusername(null);
     settokenexpirationdate(null);
     localStorage.removeItem("userData");
   });
@@ -55,6 +59,7 @@ function Routerhandler() {
       login(
         storeddata.userId,
         storeddata.token,
+        storeddata.username,
         new Date(storeddata.expiration)
       );
     }
@@ -65,6 +70,7 @@ function Routerhandler() {
         isloggedin: !!token,
         token: token,
         userid: userid,
+        username:username,
         login: login,
         logout: logout,
       }}

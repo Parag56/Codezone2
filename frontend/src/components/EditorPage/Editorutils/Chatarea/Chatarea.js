@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Chatjoin from "./Chatjoin";
 import "./Chatarea.css";
-import uuid from "react-uuid";
 import Chat from "./Chat";
 import { useParams } from "react-router-dom";
 
-function Chatarea({ name,socket }) {
+function Chatarea({ personname,socket }) {
   const [roomjoined, setroomjoined] = useState(false);
   const [username,setname]=useState(null)
   const [room,setroom]=useState(null)
@@ -14,7 +13,7 @@ function Chatarea({ name,socket }) {
     <div className="chatbox">
       {!roomjoined && (
         <Chatjoin
-          username={name}
+          username={personname}
           chatroom={chatroom}
           setroomjoined={setroomjoined}
           setname={setname}

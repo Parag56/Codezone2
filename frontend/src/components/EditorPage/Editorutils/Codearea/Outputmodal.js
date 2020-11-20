@@ -22,10 +22,10 @@ function MyVerticallyCenteredModal5(props) {
         <div className="compilestatus">
           <div className="compileresult">
             Compile Status:&nbsp;
-            {props.compile === "OK" ? (
+            {props.compile === "OK" && props.status==='NA'? (
               <span className="successfulcommpile">Compiled Successfully</span>
             ) : (
-              <span className="errorcompile">{props.compile}</span>
+              <span className="errorcompile">{props.status==='SIGSEGV'?'Segmentation fault':props.compile}</span>
             )}
           </div>
           <div className="timeresult">

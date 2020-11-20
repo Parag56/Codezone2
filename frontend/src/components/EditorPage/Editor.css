@@ -1,10 +1,10 @@
 .codeandvideo{
     display: flex;
+    flex-flow:wrap;
 }
 .codearea{
    flex:.65;
    display: block;
-   /* border: 2px solid grey; */
 }
 .videoarea{
     flex: .40;
