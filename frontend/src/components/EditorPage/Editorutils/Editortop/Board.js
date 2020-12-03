@@ -1,11 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect} from 'react';
 import './board.css';
-
+import plus from './plus.svg'
+import minus from './minus.svg'
+import paint from './paint.svg'
 
 const Board = ({socket}) => {
   const canvasRef = useRef(null);
   const colorsRef = useRef(null);
-
+  var i=5;
+  let size=useRef(i);
   useEffect(() => {
 
     // --------------- getContext() method returns a drawing context on the canvas-----
@@ -39,24 +42,25 @@ const Board = ({socket}) => {
 
     const drawLine = (x0, y0, x1, y1, color, emit) => {
       context.beginPath();
-      if(x0<0){x0-=50
-        x1-=50
-      }
-      else{x0-=50
-        x1-=50
-      }
-      if(y0<0){
-        y0-=50
-        y1-=50
-      }else{
-        y0-=50
-        y1-=50
-      }
+      // if(x0<0){x0-=50
+      //   x1-=50
+      // }
+      // else{x0-=50
+      //   x1-=50
+      // }
+      // if(y0<0){
+      //   y0-=50
+      //   y1-=50
+      // }else{
+      //   y0-=50
+      //   y1-=50
+      // }
     
       context.moveTo(x0, y0);
       context.lineTo(x1, y1);
       context.strokeStyle = color;
-      context.lineWidth = 6;
+      // context.lineWidth = 6;
+      context.lineWidth=size;
       context.stroke();
       context.closePath();
 
@@ -83,7 +87,7 @@ const Board = ({socket}) => {
 
     const onMouseMove = (e) => {
       if (!drawing) { return; }
-      drawLine(current.x, current.y, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, true);
+      drawLine((current.x), (current.y), e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY, current.color, true);
       current.x = e.clientX || e.touches[0].clientX;
       current.y = e.clientY || e.touches[0].clientY;
     };
@@ -138,22 +142,41 @@ const Board = ({socket}) => {
       const h = canvas.height;
       drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
     }
-
+   
     socket.on('drawing', onDrawingEvent);
   });
 
   // ------------- The Canvas and color elements --------------------------
-
+  const sizeIncHandler=()=>{
+    if(i<100){
+     i+=5;
+     size=i;
+     console.log(size);
+    }
+  }
+  const sizeDecHandler=()=>{
+    if(i>5){
+      i-=5;
+      size=i;
+      console.log(size);
+    }
+  }
   return (
     <div>
       <canvas ref={canvasRef} className="whiteboard" />
 
       <div ref={colorsRef} className="colors">
+      <img className="cnvs" src={paint} />
         <div className="color black" />
         <div className="color red" />
         <div className="color green" />
         <div className="color white" />
         <div className="color yellow" />
+        <h2>Drawing Area</h2>
+        <div className="size-btns">
+        <button  className="size"  onClick={sizeIncHandler}> <img className="inc-dec" src={plus} /> </button>
+        <button  className="size"  onClick={sizeDecHandler}> <img className="inc-dec" src={minus} /> </button>
+        </div>
       </div>
     </div>
   );

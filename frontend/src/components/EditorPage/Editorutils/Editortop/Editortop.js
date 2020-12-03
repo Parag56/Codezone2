@@ -19,8 +19,8 @@ function Editortop({ socket,username }) {
       </div>
 
       <div className="userinfo">
+        <span className="username">Welcome,</span>
         <span className="username">{username}</span>
-        <span className="cstyledesign">C++</span>
       </div>
 
       <ul className="editorfunctionsdesign">

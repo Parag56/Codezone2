@@ -13,8 +13,8 @@
     /* border-top: 5px solid #f2aa4cff; */
 }
 .solidborder{
-    height: 5px;
-    background-color: #f2aa4cff;
+    height: 5.5px;
+    background:linear-gradient(to right,darkblue,#f2aa4cff);
 }
 .logodesign{
     height: 60px;
@@ -26,7 +26,8 @@
 .userinfo{
     display: flex;
     flex-direction: column;
-    float: left;
+    align-items: flex-start;
+
 }
 .editorfunctionsdesign{
     display: flex;
