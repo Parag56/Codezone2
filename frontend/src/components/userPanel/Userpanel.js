@@ -238,13 +238,7 @@ function Userpanel(props) {
                        <h2>4min ago</h2>
                    </div>
                </div>
-
-               
-               
-
-              
               </div>}
-        
         </Typography>
       </main>
     </div>

@@ -12,6 +12,10 @@ const codeSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    time:{
+        type:String,
+        required:true
+    },
     creator:{
         type:mongoose.Types.ObjectId,
         required:true,
