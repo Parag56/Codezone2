@@ -221,11 +221,26 @@ const resetpassword=async (req,res,next)=>{
   return  res.status(404).json({"error":'this is one error'}) 
  }
 }
+const getcodes=async (req,res,next)=>{
+  const userid=req.params.id
+  let usercodes;
+  try{
+    usercodes=await User.findById(userid).populate('codes')
+  }catch(err){
+    return res.status(500).json({err})
+  }
+  if(!usercodes||usercodes.codes.length===0){
+    return res.status(404).json({message:'There are no codes currently available'})
+  }
+  return res.status(200).json({data:usercodes.codes})
+   
+}
 module.exports = {
   signup,
   login,
   getuser,
   forgotpassword,
   resetpassword,
-  verifyuser
+  verifyuser,
+  getcodes
 };
